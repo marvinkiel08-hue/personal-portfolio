@@ -248,21 +248,22 @@ document.getElementById("contact-form")?.addEventListener("submit", (event) => {
   const senderEmail = document.getElementById("form-email").value.trim();
   const subject =
     document.getElementById("contact-subject").value.trim() ||
-    "Portfolio inquiry";
+    "Portfolio Inquiry";
   const message = document.getElementById("contact-message").value.trim();
 
-  if (!contactFeedback || !emailAddress) return;
+  if (!contactFeedback) return;
 
-  const mailto = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-    `${name} (${senderEmail}) wrote:\n\n${message}`,
-  )}`;
-  contactFeedback.replaceChildren(
-    document.createTextNode("Your email draft is ready. "),
+  if (!name || !senderEmail || !message) {
+    contactFeedback.textContent =
+      "Please enter your name, email address, and message.";
+    return;
+  }
+
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(
+    `Name: ${name}\nEmail: ${senderEmail}\n\nMessage:\n${message}`,
   );
-
-  const emailDraftLink = document.createElement("a");
-  emailDraftLink.href = mailto;
-  emailDraftLink.className = "text-primary underline";
-  emailDraftLink.textContent = "Open your email app to send it.";
-  contactFeedback.append(emailDraftLink);
+  const composeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=marvin.kiel08@gmail.com&su=${encodedSubject}&body=${encodedBody}`;
+  window.open(composeUrl, "_blank", "noopener");
+  contactFeedback.textContent = "Gmail compose opened in a new tab.";
 });
