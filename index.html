@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Marvin Kiel Dolor Mendiola | BSIT Portfolio</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-container":"#4d8eff","on-surface-variant":"#c2c6d6","surface-container":"#1c2028","primary":"#adc6ff","surface":"#0f131c","tertiary":"#b4c5ff","on-tertiary-container":"#002469","tertiary-fixed":"#dbe1ff","on-primary-fixed":"#001a42","surface-container-high":"#262a33","surface-dim":"#0f131c","tertiary-fixed-dim":"#b4c5ff","surface-variant":"#31353e","error-container":"#93000a","secondary":"#a4c9ff","on-tertiary-fixed-variant":"#003ea8","on-primary-fixed-variant":"#004395","surface-container-lowest":"#0a0e16","tertiary-container":"#618bff","inverse-primary":"#005ac2","inverse-surface":"#dfe2ee","error":"#ffb4ab","inverse-on-surface":"#2c3039","background":"#0f131c","on-tertiary-fixed":"#00174b","on-error":"#690005","secondary-fixed-dim":"#a4c9ff","outline-variant":"#424754","on-secondary-fixed-variant":"#004883","primary-fixed":"#d8e2ff","on-surface":"#dfe2ee","surface-bright":"#353942","on-background":"#dfe2ee","on-secondary-container":"#d6e5ff","on-primary":"#002e6a","surface-container-low":"#181c24","on-primary-container":"#00285d","secondary-container":"#0267b8","surface-container-highest":"#31353e","on-tertiary":"#002a78","on-secondary-fixed":"#001c39","primary-fixed-dim":"#adc6ff","outline":"#8c909f","surface-tint":"#adc6ff","on-secondary":"#00315d","secondary-fixed":"#d4e3ff","on-error-container":"#ffdad6"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","space-lg":"1.5rem",gutter:"1.5rem",margin:"3rem","space-xs":"0.25rem","space-sm":"0.5rem","space-xl":"2.5rem"},fontFamily:{display:["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-md":["Plus Jakarta Sans"],"label-md":["JetBrains Mono"],"body-sm":["Inter"],"code-sm":["JetBrains Mono"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-sm":["JetBrains Mono"],"display-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"code-md":["JetBrains Mono"],"body-md":["Inter"]},fontSize:{display:["48px",{lineHeight:"56px",letterSpacing:"-0.03em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],"code-sm":["12px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"500"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"600"}],"display-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"code-md":["14px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"500"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}};</script><style>
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+main section[id] { scroll-margin-top: 5rem; }
+@media (max-width: 1279px) {
+  #primary-navigation.is-open { display: flex; position: fixed; top: 4rem; left: 0; right: 0; z-index: 49; flex-direction: column; align-items: stretch; gap: 0; padding: 0.75rem 1rem 1rem; background: rgba(15, 19, 28, 0.98); border-bottom: 1px solid rgba(66, 71, 84, 0.6); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); }
+  #primary-navigation.is-open a { padding: 0.75rem 0.5rem; }
+}
+#project-modal::backdrop { background: rgba(10, 14, 22, 0.82); backdrop-filter: blur(4px); }
+#project-gallery-image { max-height: 62vh; }
+.developer-profile-card { min-width: 0; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 0.85rem; padding: clamp(1rem, 3vw, 1.4rem); background: #111827; color: #f8fafc; box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24); transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
+.developer-profile-card:hover, .developer-profile-card:focus-within { border-color: rgba(59, 130, 246, 0.48); box-shadow: 0 20px 46px rgba(37, 99, 235, 0.12); transform: translateY(-2px); }
+.developer-profile-header { display: flex; align-items: center; gap: 1rem; }
+.developer-profile-photo { width: 4.25rem; height: 4.25rem; flex: 0 0 auto; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 50%; object-fit: cover; }
+.developer-profile-details { min-width: 0; }
+.developer-profile-name { margin: 0; color: #f8fafc; font: 700 1.05rem/1.3 "Plus Jakarta Sans", sans-serif; letter-spacing: -0.02em; }
+.developer-profile-role, .developer-profile-location { margin: 0.3rem 0 0; font-size: 0.78rem; line-height: 1.5; }
+.developer-profile-role { color: #cbd5e1; }
+.developer-profile-role span { color: #64748b; }
+.developer-profile-location { color: #94a3b8; }
+.developer-profile-status { display: inline-flex; max-width: 100%; align-items: center; gap: 0.5rem; margin-top: 1.1rem; border: 1px solid rgba(74, 222, 128, 0.18); border-radius: 999px; padding: 0.42rem 0.7rem; background: rgba(34, 197, 94, 0.08); color: #86efac; font-size: 0.7rem; font-weight: 600; line-height: 1.4; }
+.developer-profile-status > span { width: 0.45rem; height: 0.45rem; flex: 0 0 auto; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1); }
+.developer-profile-stack { margin-top: 1.2rem; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1rem; }
+.developer-profile-stack > p { margin: 0 0 0.65rem; color: #94a3b8; font: 600 0.65rem/1.4 "JetBrains Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+.developer-profile-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.developer-profile-pills > span { border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 0.4rem; padding: 0.35rem 0.55rem; background: #0f172a; color: #cbd5e1; font: 500 0.7rem/1.4 "JetBrains Mono", monospace; }
+.developer-featured-work { overflow: hidden; margin-top: 1.2rem; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 0.65rem; background: #0f172a; }
+.developer-featured-work > img { display: block; width: 100%; aspect-ratio: 1.8; border-bottom: 1px solid rgba(255, 255, 255, 0.08); object-fit: cover; object-position: top; }
+.developer-featured-caption { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.8rem 0.9rem; }
+.developer-featured-caption > p { margin: 0; color: #e2e8f0; font: 600 0.78rem/1.45 "Plus Jakarta Sans", sans-serif; }
+.developer-featured-caption > a { flex: 0 0 auto; color: #60a5fa; font-size: 0.7rem; font-weight: 600; text-decoration: none; transition: color 160ms ease; }
+.developer-featured-caption > a:hover { color: #bfdbfe; }
+@media (max-width: 480px) { .developer-featured-caption { align-items: flex-start; flex-direction: column; gap: 0.4rem; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="h-8 w-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md" aria-label="Marvin Kiel monogram">MK</div><a class="flex items-center gap-space-xs" href="#home"><span class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors tracking-tight">Marvin Kiel Dolor Mendiola</span><span class="font-label-sm text-label-sm text-primary uppercase px-space-xs py-0.5 rounded bg-surface-container-high border border-outline-variant/40">BSIT</span></a></div><nav id="primary-navigation" class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a aria-current="page" class="transition-colors text-primary font-bold" data-path="home" href="#home">Home</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#about">About</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="skills" href="#skills">Skills</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#projects">Projects</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="achievements" href="#achievements">Achievements</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#contact">Contact</a></nav><button id="mobile-menu-toggle" type="button" class="xl:hidden inline-flex items-center justify-center p-2 rounded-lg text-on-surface hover:bg-surface-container-high" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu"><span class="material-symbols-outlined" aria-hidden="true">menu</span></button><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs rounded-lg font-body-sm text-body-sm font-semibold bg-secondary-container text-on-secondary-container hover:bg-primary hover:text-on-primary shadow-[0_0_16px_rgba(77,142,255,0.25)] transition-all active:scale-[0.98]" href="#contact">Let's Connect</a><div class="flex items-center pl-space-xs border-l border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40" src="images/kk.jpg"/></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<section class="relative w-full overflow-hidden py-20 lg:py-28" id="home">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -right-32 w-80 h-80 bg-secondary-container/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col items-start gap-space-md">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm shadow-[0_0_12px_rgba(77,142,255,0.25)]">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+              👋 Welcome to my portfolio
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              🟢 4th-Year BSIT Student
+            </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant tracking-wide">Mabuhay! I am</span>
+<h1 class="font-display text-display text-on-surface tracking-tight">
+              Marvin Kiel Dolor <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-primary to-secondary">Mendiola</span>
+</h1>
+<p class="font-headline-md text-headline-md text-primary font-bold">
+              4th-Year BSIT Student | Aspiring Web Developer &amp; IT Specialist
+            </p>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Hello! I'm <strong class="text-on-surface">Marvin</strong>, a 4th-year BSIT student at La Consolacion University of the Philippines passionate about software development, database management, and practical IT solutions. Welcome to my digital portfolio showcasing my academic projects and technical milestones.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-body-md text-body-md font-semibold bg-primary-container text-on-primary-container hover:bg-primary shadow-[0_0_24px_rgba(77,142,255,0.4)] transition-all hover:-translate-y-0.5 active:scale-95" href="#projects">
+<span>View Projects</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-body-md text-body-md font-medium bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all hover:-translate-y-0.5" href="#contact">
+<span>Get In Touch</span>
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-3 rounded-lg font-label-md text-label-md text-primary hover:text-white transition-colors" href="assets/Marvin-Kiel-Mendiola-CV.pdf" download="Marvin-Kiel-Mendiola-CV.pdf">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download CV</span>
+</a>
+</div>
+<div class="grid grid-cols-3 gap-3 w-full max-w-xl pt-4">
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-headline-md text-headline-md text-primary">4th Year</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">BSIT Candidate</span>
+</div>
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-headline-md text-headline-md text-secondary">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Featured Projects</span>
+</div>
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-headline-md text-headline-md text-primary-fixed">LCUP</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">BSIT Student</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<article class="developer-profile-card">
+<div class="developer-profile-header">
+<img class="developer-profile-photo" alt="Portrait of Marvin Kiel Dolor Mendiola" src="images/kk.jpg"/>
+<div class="developer-profile-details">
+<h2 class="developer-profile-name">Marvin Kiel Dolor Mendiola</h2>
+<p class="developer-profile-role">4th-Year BSIT Student <span>•</span> Senior Scholar</p>
+<p class="developer-profile-location">La Consolacion University of the Philippines</p>
+</div>
+</div>
+<div class="developer-profile-status">
+<span aria-hidden="true"></span>
+Available for OJT / Entry-Level Roles
+</div>
+<div class="developer-profile-stack">
+<p>Core Tech Stack</p>
+<div class="developer-profile-pills" aria-label="Core technology stack">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>PHP</span>
+<span>MySQL</span>
+</div>
+</div>
+<article class="developer-featured-work">
+<img src="images/practifolio/practifolio-01-login.png" alt="Practifolio student portal sign-in screen"/>
+<div class="developer-featured-caption">
+<p>Featured Work: Practifolio</p>
+<a href="#projects">View Case Study <span aria-hidden="true">→</span></a>
+</div>
+</article>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full py-20 bg-surface-container-lowest/60" id="about">
+<div class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter flex flex-col gap-12">
+<div class="flex flex-col items-start gap-2">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase px-2.5 py-1 rounded bg-surface-container-high">ABOUT ME</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Education &amp; Background</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          My academic work at La Consolacion University of the Philippines is focused on software development, database management, and practical information technology solutions.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-5 flex flex-col bg-surface-container-low rounded-xl p-space-lg shadow-md justify-between gap-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">Higher Education</span>
+<span class="font-code-sm text-code-sm text-primary">4th Year</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface">4th Year Bachelor of Science in Information Technology</h3>
+<p class="font-body-md text-body-md text-primary">La Consolacion University of the Philippines (LCUP)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Malolos, Bulacan, Philippines</p>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Areas of Interest</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[16px]">done</span> Software Development</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[16px]">done</span> Database Management</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[16px]">done</span> Practical IT Solutions</span>
+</div>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Information Technology Student</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">La Consolacion University of the Philippines (LCUP)</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col justify-between gap-6">
+<div class="flex flex-col gap-4 text-on-surface-variant font-body-md text-body-md leading-relaxed bg-surface-container-low rounded-xl p-space-lg shadow-md">
+<p>
+              I am a 4th-year BSIT student at La Consolacion University of the Philippines who enjoys turning ideas into useful, accessible software. My studies have helped me build a foundation in web development and database management.
+            </p>
+<p>
+              I enjoy learning through hands-on academic projects, solving practical problems, and improving my technical skills through each stage of development.
+            </p>
+<p>
+              I am passionate about software development, database management, and practical IT solutions, and I look forward to continuing to grow as a web developer and IT specialist.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">developer_mode</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Software Development</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Building projects and continuing to improve my web development skills.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl">psychology</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Database Management</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Exploring how databases organize and support useful applications.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-2">
+<span class="material-symbols-outlined text-tertiary text-2xl">group_work</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Practical IT Solutions</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Using technology to address practical needs and everyday problems.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full py-20" id="skills">
+<div class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter flex flex-col gap-12">
+<div class="flex flex-col items-start gap-2">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase px-2.5 py-1 rounded bg-surface-container-high">TECHNICAL EXPERTISE</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Skills &amp; Tech Stack</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Languages and tools I am currently learning and using: HTML, CSS, JavaScript, PHP, MySQL, Git, and Figma.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-md shadow-md gap-4">
+<div class="flex items-center gap-2">
+<span class="p-2 rounded-lg bg-primary/10 text-primary material-symbols-outlined text-[20px]">web</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Frontend</h3>
+<p class="font-label-sm text-label-sm text-outline">Web Technologies</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-primary">HTML</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-primary">CSS</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-primary">JavaScript</span>
+</div>
+<div class="mt-auto pt-2 flex flex-col gap-1.5">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Interactive UI Readiness</span>
+<span class="text-primary font-bold">Web</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-md shadow-md gap-4">
+<div class="flex items-center gap-2">
+<span class="p-2 rounded-lg bg-secondary/10 text-secondary material-symbols-outlined text-[20px]">database</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Backend &amp; DB</h3>
+<p class="font-label-sm text-label-sm text-outline">Backend &amp; Data</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-secondary">PHP</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-secondary">MySQL</span>
+</div>
+<div class="mt-auto pt-2 flex flex-col gap-1.5">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Relational CRUD &amp; APIs</span>
+<span class="text-secondary font-bold">Data</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-md shadow-md gap-4">
+<div class="flex items-center gap-2">
+<span class="p-2 rounded-lg bg-tertiary/10 text-tertiary material-symbols-outlined text-[20px]">construction</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dev Tools</h3>
+<p class="font-label-sm text-label-sm text-outline">Design &amp; Version Control</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-tertiary">Git</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-tertiary">Figma</span>
+</div>
+<div class="mt-auto pt-2 flex flex-col gap-1.5">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Tooling &amp; Versioning</span>
+<span class="text-tertiary font-bold">Tools</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-md shadow-md gap-4">
+<div class="flex items-center gap-2">
+<span class="p-2 rounded-lg bg-primary-fixed/10 text-primary-fixed material-symbols-outlined text-[20px]">hub</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Core IT Ops</h3>
+<p class="font-label-sm text-label-sm text-outline">Areas of Interest</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-primary-fixed">Software Development</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-primary-fixed">Database Management</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-primary-fixed">Practical IT Solutions</span>
+</div>
+<div class="mt-auto pt-2 flex flex-col gap-1.5">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Infrastructure Competence</span>
+<span class="text-primary-fixed font-bold">85%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full py-20 bg-surface-container-lowest/60" id="projects">
+<div class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter flex flex-col gap-12">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div class="flex flex-col items-start gap-2">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase px-2.5 py-1 rounded bg-surface-container-high">FEATURED WORK</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Completed IT Projects</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Academic projects showcasing software development, database management, and practical IT problem-solving.
+          </p>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Academic Projects</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<div class="flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-52 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover object-top" src="images/practifolio/practifolio-02-overview.png" alt="Practifolio student dashboard overview"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-label-sm text-label-sm text-primary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Practicum Management System</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-4">
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Practifolio</h3>
+<p class="font-label-sm text-label-sm text-primary">Student Practicum Portal</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A student portal for tracking practicum attendance, required documents, weekly journals, applications, and evaluations.</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="project-tech flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">Student Dashboard</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">DTR &amp; Journals</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">Document Tracking</span>
+</div>
+<button type="button" class="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-colors font-body-sm text-body-sm font-semibold" data-project-trigger data-project-gallery="practifolio">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+<span>View Screenshots</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-52 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover object-center" src="images/jump-game/jump-game-04-level-two.png" alt="Jump Game level two platform gameplay"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-label-sm text-label-sm text-secondary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>2D Platformer</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-4">
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">Jump Game</h3>
+<p class="font-label-sm text-label-sm text-secondary">Two-Level Platform Game</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A 2D platform game with two selectable levels, collectible items, score tracking, and a game-over screen with retry and quit options.</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="project-tech flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">2D Platformer</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">Level Selection</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">Collectibles &amp; Scoring</span>
+</div>
+<button type="button" class="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary transition-colors font-body-sm text-body-sm font-semibold" data-project-trigger data-project-gallery="jump-game">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+<span>View Screenshots</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-52 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover object-center" src="images/taskmate/taskmate-02-dashboard.png" alt="TaskMate dashboard displaying task filters and progress summaries"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-label-sm text-label-sm text-primary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Student Task Planner</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-4">
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">TaskMate</h3>
+<p class="font-label-sm text-label-sm text-primary">Mobile Task Management App</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A student-focused task planner for organizing assignments and exams by category, difficulty, and due date, with pending, completed, and overdue filters plus a daily inspiration verse.</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="project-tech flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">Task Categories</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">Deadline Tracking</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-code-sm text-secondary">Progress Filters</span>
+</div>
+<button type="button" class="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-colors font-body-sm text-body-sm font-semibold" data-project-trigger data-project-gallery="taskmate">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+<span>View Screenshots</span>
+</button>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+</section>
+<section class="w-full py-20" id="achievements">
+<div class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter flex flex-col gap-12">
+<div class="flex flex-col items-start gap-2">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase px-2.5 py-1 rounded bg-surface-container-high">MILESTONES</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Certificates &amp; Awards</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Professional certifications and academic milestones.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-3 p-space-lg rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">workspace_premium</span><span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-primary">Microsoft Certification</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Microsoft Office Specialist: Microsoft Access Expert (Office 2019)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Issued by Microsoft / Certiport</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Certified proficiency in advanced relational database design, complex queries, forms, reports, and database management using Microsoft Access 2019.</p>
+<div class="min-h-48 rounded-lg bg-surface-container flex items-center justify-center p-4">
+<img class="max-h-48 max-w-full object-contain" src="images/access-badge.png.png" alt="Microsoft Office Specialist: Microsoft Access Expert (Office 2019) badge"/>
+</div>
+<a class="inline-flex items-center justify-center gap-2 self-start px-4 py-2 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-colors font-body-sm text-body-sm font-semibold" href="https://www.credly.com/badges/dab610e4-bc94-4858-9421-c546e11d1d62/public_url" target="_blank" rel="noopener noreferrer">
+<span>Verify Credential</span>
+<span class="material-symbols-outlined text-[16px]" aria-hidden="true">open_in_new</span>
+</a>
+</div>
+<div class="flex flex-col gap-3 p-space-lg rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-3xl text-secondary" aria-hidden="true">workspace_premium</span><span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-secondary">freeCodeCamp &amp; Microsoft</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Foundational C# with Microsoft</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Developer certification issued October 19, 2025.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Completed freeCodeCamp's Foundational C# with Microsoft developer certification.</p>
+<div class="min-h-48 rounded-lg bg-surface-container flex items-center justify-center p-4">
+<img class="max-h-48 max-w-full object-contain" src="images/certificates/foundational-c-sharp-with-microsoft.png" alt="Foundational C# with Microsoft developer certificate for Marvin Kiel"/>
+</div>
+<a class="inline-flex items-center justify-center gap-2 self-start px-4 py-2 rounded-lg bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary transition-colors font-body-sm text-body-sm font-semibold" href="https://freecodecamp.org/certification/fcc-9cc12739-9836-4342-ad80-73e82acea71f/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener noreferrer">
+<span>Verify Credential</span>
+<span class="material-symbols-outlined text-[16px]" aria-hidden="true">open_in_new</span>
+</a>
+</div>
+<div class="flex flex-col gap-3 p-space-lg rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">workspace_premium</span><span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-primary">TestDome</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">HTML/CSS Skills Test</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Passed August 8, 2026 · Ranked in the top 10%.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Passed TestDome's public HTML/CSS test, demonstrating practical front-end skills.</p>
+<div class="min-h-48 rounded-lg bg-surface-container flex items-center justify-center p-4">
+<img class="max-h-48 max-w-full object-contain" src="images/certificates/testdome-html-css.png" alt="TestDome HTML/CSS certificate showing a top 10% ranking for Marvin Kiel Mendiola"/>
+</div>
+<a class="inline-flex items-center justify-center gap-2 self-start px-4 py-2 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-colors font-body-sm text-body-sm font-semibold" href="images/certificates/testdome-html-css.png" target="_blank" rel="noopener noreferrer">
+<span>View Credential</span>
+<span class="material-symbols-outlined text-[16px]" aria-hidden="true">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full py-20 bg-surface-container-lowest" id="contact">
+<div class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter flex flex-col gap-12">
+<div class="flex flex-col items-start gap-2">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase px-2.5 py-1 rounded bg-surface-container-high">GET IN TOUCH</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Let's Collaborate &amp; Build Together</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          For questions about my academic projects or potential opportunities, contact me by email or social media.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-5 flex flex-col justify-between gap-6">
+<div class="flex flex-col gap-4">
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="p-2.5 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[22px]">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Primary Inquiries</span>
+<a class="font-code-sm text-code-sm text-on-surface font-semibold hover:text-primary transition-colors" id="contact-email" href="mailto:marvin.kiel08@gmail.com">marvin.kiel08@gmail.com</a>
+</div>
+</div>
+<button type="button" class="p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors" data-copy-email title="Copy Email" aria-label="Copy email address">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex items-center gap-3">
+<div class="p-2.5 rounded-lg bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">University</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">La Consolacion University of the Philippines (LCUP)</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-3">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Online Presence</span>
+<div class="flex flex-col gap-2">
+<a class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors" href="https://github.com/marvinkiel08-hue" rel="noopener noreferrer" target="_blank">
+<span class="flex items-center gap-2 font-code-sm text-code-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">terminal</span>
+                    github.com/marvinkiel08-hue
+                  </span>
+<span class="material-symbols-outlined text-[16px] text-outline">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors" href="https://www.facebook.com/marvin.kiel.mendiola.2024" rel="noopener noreferrer" target="_blank">
+<span class="flex items-center gap-2 font-code-sm text-code-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">hub</span>
+                    facebook.com/marvin.kiel.mendiola.2024
+                  </span>
+<span class="material-symbols-outlined text-[16px] text-outline">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-primary animate-pulse shadow-[0_0_12px_rgba(77,142,255,0.8)]"></span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Open to Learning &amp; Collaboration</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Passionate about practical IT solutions</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-lg shadow-xl">
+<form class="flex flex-col gap-4" id="contact-form">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface" for="contact-name">Full Name <span class="text-primary">*</span></label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-variant transition-colors" id="contact-name" placeholder="e.g. Maria Santos" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface" for="form-email">Email Address <span class="text-primary">*</span></label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-variant transition-colors" id="form-email" placeholder="maria@company.ph" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface" for="contact-subject">Subject</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-variant transition-colors" id="contact-subject" placeholder="Internship Opportunity / Project Inquiry" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface" for="contact-message">Message <span class="text-primary">*</span></label>
+<textarea class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-variant transition-colors resize-none" id="contact-message" placeholder="Tell me about your project, engineering team, or role opening..." required="" rows="4"></textarea>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-body-md text-body-md font-semibold bg-primary-container text-on-primary-container hover:bg-primary shadow-[0_0_20px_rgba(77,142,255,0.35)] transition-all active:scale-95" type="submit">
+<span>Send Message</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                No backend needed; your email app will send the message.
+              </span>
+</div>
+<p id="contact-feedback" class="font-body-sm text-body-sm text-secondary" role="status" aria-live="polite"></p>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 pt-space-xl pb-space-lg">
+<div class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg pb-space-xl">
+<div class="md:col-span-6 flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface">Marvin Kiel Dolor Mendiola</span><span class="font-label-sm text-label-sm text-primary px-space-xs py-0.5 rounded bg-surface-container">BSIT Portfolio</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">4th-year BSIT student at La Consolacion University of the Philippines, interested in software development, database management, and practical IT solutions.</p>
+</div>
+<div class="md:col-span-3 flex flex-col gap-space-xs"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-xs">Quick Links</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#home">Home</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#achievements">Achievements</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a></div>
+<div class="md:col-span-3 flex flex-col gap-space-xs"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-xs">Find Me Online</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/marvinkiel08-hue" target="_blank" rel="noopener noreferrer">GitHub</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="https://www.facebook.com/marvin.kiel.mendiola.2024" target="_blank" rel="noopener noreferrer">Facebook</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="mailto:marvin.kiel08@gmail.com">marvin.kiel08@gmail.com</a></div>
+</div>
+<div class="border-t border-outline-variant/30 pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-label-sm text-label-sm text-outline">&copy; Marvin Kiel Dolor Mendiola</p><span class="font-label-sm text-label-sm text-outline">4th Year BSIT &bull; LCUP</span></div>
+</div>
+</footer>
+<dialog id="project-modal" class="w-[min(94vw,64rem)] max-w-none rounded-xl bg-surface-container-low p-0 text-on-surface shadow-2xl" aria-labelledby="project-modal-title">
+<div class="flex flex-col gap-4 p-space-lg">
+<div class="flex items-start justify-between gap-4"><div><span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Project Details</span><h2 id="project-modal-title" class="font-headline-lg text-headline-lg text-on-surface mt-1"></h2></div><button type="button" class="p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-primary" data-close-modal aria-label="Close project details"><span class="material-symbols-outlined" aria-hidden="true">close</span></button></div>
+<div id="project-modal-gallery" class="flex flex-col gap-3" hidden>
+<div class="relative flex items-center justify-center overflow-hidden rounded-lg bg-surface-container-lowest">
+<img id="project-gallery-image" class="w-full object-contain" src="" alt=""/>
+<button type="button" class="absolute left-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-surface/90 text-on-surface shadow-lg hover:bg-primary hover:text-on-primary" data-gallery-previous aria-label="View previous screenshot"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></button>
+<button type="button" class="absolute right-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-surface/90 text-on-surface shadow-lg hover:bg-primary hover:text-on-primary" data-gallery-next aria-label="View next screenshot"><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+</div>
+<div class="flex items-center justify-between gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<p id="project-gallery-caption" aria-live="polite"></p>
+<p id="project-gallery-counter" class="shrink-0"></p>
+</div>
+</div>
+<p id="project-modal-description" class="font-body-md text-body-md text-on-surface-variant"></p>
+<div><h3 class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2">Tech Stack</h3><ul id="project-modal-tech" class="flex flex-wrap gap-2"></ul></div>
+</div>
+</dialog>
+<script src="script.js" defer></script>
+</body></html>
